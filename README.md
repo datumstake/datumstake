@@ -34,10 +34,10 @@ used for authenticated workflows a headless scraper can't reach.
 
 | Project | What it demonstrates |
 |---|---|
-| **[adapt-engine](https://github.com/datumstake/adapt-engine)** | A generic adaptation engine: gap classes resolved from declarative rules, each carrying its own machine-checkable proof. Case study: a small model driving a real GBA-ROM C port, each change ground-truthed by a compile+link. |
+| **[adapt-engine](https://github.com/datumstake/adapt-engine)** | A generic adaptation engine: gap classes resolved from declarative rules, each carrying its own machine-checkable proof. Case study: a small model driving a real porting effort, each change ground-truthed by a compile+link. |
+| **[self-verifying-ratchet](https://github.com/datumstake/self-verifying-ratchet)** | The propose/measure/commit-or-rollback loop that pairs with it: a workload is an objective contract, and the measurement — never the proposer — decides what lands. Live demo includes a sabotaged move getting rejected. |
 
-*More showcase repos in progress — a self-verifying ratchet (the workload-agnostic
-contract + loop, with its full test suite) and the CDP/UIA browser-pilot driver.*
+*Next up: the CDP/UIA browser-pilot driver.*
 
 ### Stack
 
