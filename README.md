@@ -36,8 +36,10 @@ used for authenticated workflows a headless scraper can't reach.
 |---|---|
 | **[adapt-engine](https://github.com/datumstake/adapt-engine)** | A generic adaptation engine: gap classes resolved from declarative rules, each carrying its own machine-checkable proof. Case study: a small model driving a real porting effort, each change ground-truthed by a compile+link. |
 | **[self-verifying-ratchet](https://github.com/datumstake/self-verifying-ratchet)** | The propose/measure/commit-or-rollback loop that pairs with it: a workload is an objective contract, and the measurement — never the proposer — decides what lands. Live demo includes a sabotaged move getting rejected. |
+| **[browser-pilot](https://github.com/datumstake/browser-pilot)** | A CDP driver that steers a real, logged-in Chrome through a handful of one-word verbs — elements addressed by number, not CSS selector — so a small model can run authenticated workflows a headless scraper can't reach. Documents the Chrome 136 dedicated-profile constraint; hermetic offline test suite. |
+| **[focus-three](https://github.com/datumstake/focus-three)** | A complete, dependency-free focus tool in a single offline HTML file: three capped task slots and a Pomodoro timer, state persisted in the browser. The product-polish counterpoint to the systems work. |
 
-*Next up: the CDP/UIA browser-pilot driver.*
+*Next up: a write-up of the living-RAG retrieval pattern — one authority, drawer-scoped, model-agnostic.*
 
 ### Stack
 
