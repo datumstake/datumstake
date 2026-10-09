@@ -32,12 +32,17 @@ used for authenticated workflows a headless scraper can't reach.
 
 ### Selected work
 
-| Project | What it demonstrates |
-|---|---|
-| **[adapt-engine](https://github.com/datumstake/adapt-engine)** | A generic adaptation engine: gap classes resolved from declarative rules, each carrying its own machine-checkable proof. Case study: a small model driving a real porting effort, each change ground-truthed by a compile+link. |
-| **[self-verifying-ratchet](https://github.com/datumstake/self-verifying-ratchet)** | The propose/measure/commit-or-rollback loop that pairs with it: a workload is an objective contract, and the measurement — never the proposer — decides what lands. Live demo includes a sabotaged move getting rejected. |
-| **[browser-pilot](https://github.com/datumstake/browser-pilot)** | A CDP driver that steers a real, logged-in Chrome through a handful of one-word verbs — elements addressed by number, not CSS selector — so a small model can run authenticated workflows a headless scraper can't reach. Documents the Chrome 136 dedicated-profile constraint; hermetic offline test suite. |
-| **[focus-three](https://github.com/datumstake/focus-three)** | A complete, dependency-free focus tool in a single offline HTML file: three capped task slots and a Pomodoro timer, state persisted in the browser. The product-polish counterpoint to the systems work. |
+**Start here:** [focus-three](https://datumstake.github.io/focus-three/) runs in your
+browser right now (one file, nothing to install); if you want the systems work
+instead, read [self-verifying-ratchet](https://github.com/datumstake/self-verifying-ratchet)
+— it is the shortest statement of how I build.
+
+| Project | What it demonstrates | Proof you can run |
+|---|---|---|
+| **[adapt-engine](https://github.com/datumstake/adapt-engine)** | A generic adaptation engine: gap classes resolved from declarative rules, each carrying its own machine-checkable proof. Case study: a small model driving a real porting effort, each change ground-truthed by a compile+link. | `python examples/demo.py` shows a proof holding, then **refusing** when you corrupt the asset it checks. 13 tests, CI green, zero runtime deps. |
+| **[self-verifying-ratchet](https://github.com/datumstake/self-verifying-ratchet)** | The propose/measure/commit-or-rollback loop that pairs with it: a workload is an objective contract, and the measurement — never the proposer — decides what lands. | The demo plants a **sabotaged move** and you watch it get rolled back. 8 tests, CI green, zero runtime deps. |
+| **[browser-pilot](https://github.com/datumstake/browser-pilot)** | A CDP driver that steers a real, logged-in Chrome through a handful of one-word verbs — elements addressed by number, not CSS selector — so a small model can run authenticated workflows a headless scraper can't reach. Documents the Chrome 136 dedicated-profile constraint. | 6 tests that run **without a browser** (stub CDP), so CI stays hermetic; `examples/demo.py` drives a real one. |
+| **[focus-three](https://github.com/datumstake/focus-three)** | A complete, dependency-free focus tool in a single offline HTML file: three capped task slots and a Pomodoro timer, state persisted in the browser. The product-polish counterpoint to the systems work. | **[Live demo](https://datumstake.github.io/focus-three/)** — one file, zero dependencies, zero network calls. |
 
 *Next up: a write-up of the living-RAG retrieval pattern — one authority, drawer-scoped, model-agnostic.*
 
@@ -46,6 +51,17 @@ used for authenticated workflows a headless scraper can't reach.
 Python · TypeScript/Node · local LLMs (Ollama, llama.cpp) · SQLite (FTS) ·
 CDP/UIA automation · Windows-first, cross-platform aware
 
+### How I work
+
+Every claim in these repos ships with the command that would fail if it were
+wrong — a test, a demo that refuses when you break its premise, a measured
+number rather than an assertion. That is the habit the field-services work
+taught: *a result with no check beside it is an anecdote.*
+
 ### Reach me
 
-📧 datumstake@gmail.com · open to contract and consulting engagements
+📧 **datumstake@gmail.com** · open to contract and consulting engagements
+· repos: [adapt-engine](https://github.com/datumstake/adapt-engine)
+· [self-verifying-ratchet](https://github.com/datumstake/self-verifying-ratchet)
+· [browser-pilot](https://github.com/datumstake/browser-pilot)
+· [focus-three](https://github.com/datumstake/focus-three)
