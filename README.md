@@ -41,22 +41,24 @@ workflow a headless scraper cannot reach.
 
 ### Selected work
 
-**Start here:** [pdftext](https://github.com/datumstake/pdftext) is one header file with
-no dependencies that pulls text out of a PDF — the shortest read, and the one with a
-from-scratch DEFLATE decoder in it. [focus-three](https://datumstake.github.io/focus-three/)
+**Start here:** [deedpipe](https://github.com/datumstake/deedpipe) runs in one command
+and shows the thing I actually care about — a pipeline that refuses to post what it cannot
+stand behind, scored three ways. [pdftext](https://github.com/datumstake/pdftext) is the
+shortest read: one dependency-free header with a from-scratch DEFLATE decoder in it. [focus-three](https://datumstake.github.io/focus-three/)
 runs in your browser right now, nothing to install. For how I think about verification,
 [**ratchet**](https://github.com/datumstake/ratchet) is the shortest statement of it.
 
 | Project | What it is | Proof you can run |
 |---|---|---|
+| **[deedpipe](https://github.com/datumstake/deedpipe)** | Recorded-document extraction — deeds, mortgages, releases — into a typed schema, with an exception queue that names the field that failed and why. Three numbers instead of one accuracy figure: automation rate, posted precision, and posted completeness, because automation alone can be driven to 100% by posting rows with null grantors. | `python tools/score.py --sweep` prints the whole trade-off curve. 67% automation at **100% posted precision and completeness** against ground truth the generator wrote, not the parser. CI fails the build on a single wrongly posted value. |
 | **[pdftext](https://github.com/datumstake/pdftext)** | PDF text extraction in a single C++ header, zero dependencies: a from-scratch DEFLATE decoder, chained `/ASCII85Decode` filters, subset fonts decoded through `/ToUnicode` CMaps, per-page attribution, and CTM tracking so rotated callouts land on the sheet. Written because the deployment was an offline machine where "copy one file" had to mean one file. | `make test` — 132 checks over 8 fixtures, each named for the PDF construct it proves. The corpus generator writes its own expected output, so the parser never grades itself; CI regenerates it and fails on a diff. `-Werror` on g++/clang/MSVC, ASan+UBSan, and 312 mutated files that must not crash. |
 | **[gapsmith](https://github.com/datumstake/gapsmith)** | *Resolve a whole class of porting gaps from rules that carry their own proof.* A missing symbol doesn't get a bespoke script here — its **shape** is described as a rule, and the rule ships with a machine-checkable proof that applying it is safe. Case study: a small model driving a real porting effort ~1100 undefined symbols deep, every change ground-truthed by a compile+link. | `python examples/demo.py` resolves a constant proved by tileset byte-identity — then corrupt that asset, re-run, and watch the engine **refuse**. 13 tests, CI green, zero runtime deps. |
 | **[ratchet](https://github.com/datumstake/ratchet)** | *Automation that cannot grade its own work.* The propose → measure → commit-or-rollback loop that pairs with gapsmith: a workload becomes four commands in a JSON contract, and the measurement — never the proposer — decides what is kept. Works the same on a script, an agent, or a local model. | The demo plants a **deliberately sabotaged move** and you watch the loop roll it back. 8 tests, CI green, zero runtime deps. |
 | **[handle](https://github.com/datumstake/handle)** | *A logged-in Chrome, nine verbs.* A CDP driver for sites you did **not** write, driven by a model that can't be trusted to compose a CSS selector: elements are addressed by the number a prior `links()` printed. Sees into shadow roots and types with trusted events — both lessons paid for on a live signup form that defeated the textbook approach. | 10 tests that run **without a browser** (stub CDP), so CI stays hermetic; `examples/demo.py` drives a real one. |
 | **[focus-three](https://github.com/datumstake/focus-three)** | *Three tasks, one timer, nothing else.* A native Windows app in **153 KB** — one translation unit, no framework, no installer, no runtime, zero network calls, every control custom-painted so it follows the system light/dark theme including the title bar. The product-polish counterpoint to the systems work. | **[Download](https://github.com/datumstake/focus-three/releases/latest)** and run it — nothing to install. Or **[try the browser demo](https://datumstake.github.io/focus-three/)** first. |
 
-*Next up: what PDFs actually do to you — the defect log from building the extractor above,
-every one of which produced a clean build and a plausible wrong answer.*
+*Next up: what PDFs actually do to you — the defect log from the extractors above, every
+entry of which produced a clean run and a plausible wrong answer.*
 
 ### Stack
 
@@ -73,7 +75,8 @@ taught: *a result with no check beside it is an anecdote.*
 ### Reach me
 
 📧 **datumstake@gmail.com** · open to contract and consulting engagements
-· repos: [pdftext](https://github.com/datumstake/pdftext)
+· repos: [deedpipe](https://github.com/datumstake/deedpipe)
+· [pdftext](https://github.com/datumstake/pdftext)
 · [gapsmith](https://github.com/datumstake/gapsmith)
 · [ratchet](https://github.com/datumstake/ratchet)
 · [handle](https://github.com/datumstake/handle)
