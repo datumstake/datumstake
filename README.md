@@ -58,8 +58,12 @@ runs in your browser right now, nothing to install. For how I think about verifi
 | **[handle](https://github.com/datumstake/handle)** | *A logged-in Chrome, nine verbs.* A CDP driver for sites you did **not** write, driven by a model that can't be trusted to compose a CSS selector: elements are addressed by the number a prior `links()` printed. Sees into shadow roots and types with trusted events — both lessons paid for on a live signup form that defeated the textbook approach. | 10 tests that run **without a browser** (stub CDP), so CI stays hermetic; `examples/demo.py` drives a real one. |
 | **[focus-three](https://github.com/datumstake/focus-three)** | *Three tasks, one timer, nothing else.* A native Windows app in **153 KB** — one translation unit, no framework, no installer, no runtime, zero network calls, every control custom-painted so it follows the system light/dark theme including the title bar. The product-polish counterpoint to the systems work. | **[Download](https://github.com/datumstake/focus-three/releases/latest)** and run it — nothing to install. Or **[try the browser demo](https://datumstake.github.io/focus-three/)** first. |
 
-*Next up: what PDFs actually do to you — the defect log from the extractors above, every
-entry of which produced a clean run and a plausible wrong answer.*
+**Writing:** [What PDFs actually do to you](https://github.com/datumstake/what-pdfs-do-to-you)
+— the defect log from the extractors above. Every entry produced a clean build, a successful
+run, and a wrong answer: subset fonts that emit glyph indices rather than characters, a
+tolerance that lost its `±` and still looked like a number, a legal description truncated at
+a line wrap into a description of a different property — and three cases where my own
+measurement was wrong before the code was.
 
 ### Stack
 
@@ -76,6 +80,7 @@ taught: *a result with no check beside it is an anecdote.*
 ### Reach me
 
 📧 **datumstake@gmail.com** · open to contract and consulting engagements
+· [what-pdfs-do-to-you](https://github.com/datumstake/what-pdfs-do-to-you)
 · repos: [deedpipe](https://github.com/datumstake/deedpipe)
 · [firstarticle](https://github.com/datumstake/firstarticle)
 · [pdftext](https://github.com/datumstake/pdftext)
